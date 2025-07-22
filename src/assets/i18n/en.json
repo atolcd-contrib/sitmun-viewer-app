@@ -1,7 +1,6 @@
 {
   "genericPrivateHeader.hi": "Hello",
-  "genericPrivateHeader.logout": "Log out",
-  "genericPrivateHeaders.changeAppOrTerritory": "Change the application or the territory",
+  "loginPage.logoutText": "Log out",
   "loginPage.title": "Log in",
   "loginPage.publicDashboardButton": "Public access",
   "loginPage.usernameText": "User",
@@ -146,5 +145,6 @@
   "territory.filterSearchResult": "Filter search results",
   "territory.information": "Information",
   "territory.description": "Description",
-  "territory.descriptionMissing": "No description"
+  "territory.descriptionMissing": "No description",
+  "genericPrivateHeader.changeAppOrTerritory": "Changer d'application ou de territoire"
 }
