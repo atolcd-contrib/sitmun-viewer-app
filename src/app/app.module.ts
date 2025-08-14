@@ -1,3 +1,4 @@
+import { SharedPipesModule } from './../util/pipe/SharedPipesModule';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -11,6 +12,7 @@ import { AuthenticationModule } from '@auth/auth.module';
 import { UiModule } from '@ui/ui.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AUTH_CONFIG_DI } from '@auth/authentication.options';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserService } from '@api/services/user.service';
 import { CustomAuthConfig } from '@config/app.config';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
@@ -24,8 +26,6 @@ import localeEs from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
 import { ErrorModalComponent } from '@sections/common/modals/error-modal/error-modal.component';
 import { WarningModalComponent } from '@sections/common/modals/warning-modal/warning-modal.component';
-
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 registerLocaleData(localeEs);
 
@@ -58,7 +58,8 @@ registerLocaleData(localeEs);
     }),
     FormsModule,
     NgxPaginationModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SharedPipesModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'es-ES' },

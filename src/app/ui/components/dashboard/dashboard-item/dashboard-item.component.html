@@ -1,27 +1,67 @@
 <div class="dashboard-item">
+  <!-- Image -->
   <div class="dashboard-item-image" [ngClass]="item.isUnavailable ? 'dashboard-item-maintenance' : 'dashboard-item-active'">
     <button (click)="navigateToMap(item.id)">
       <img [src]="item.logo || 'assets/img/card-no-image.svg'" />
     </button>
   </div>
 
+  <!-- Contenu -->
   <div class="dashboard-item-content" [ngClass]="item.isUnavailable ? 'dashboard-item-maintenance' : 'dashboard-item-active'">
-    <div class="dashboard-item-content-header">
-      <button (click)="navigateToMap(item.id)">
-        <h3 class="dashboard-item-title"> {{item.title}} {{item.name}} </h3>
-      </button>
-      <div class="dashboard-item-dot">
-        <button class="dot" (click)="navigateToApplicationDetails(item.id)"> <img src="assets/img/dot.svg"/></button>
-      </div>
-    </div>
-
-    <p class="dashboard-item-description" *ngIf="item.description">
-      {{ item.description && item.description.length > DESCRIPTION_MAX_CHARACTER
-          ? (item.description.slice(0, DESCRIPTION_MAX_CHARACTER) + '...')
-          : item.description }}
-    </p>
-    <p class="dashboard-item-warning" *ngIf="item.maintenanceInformation && item.maintenanceInformation.length > 0"> {{ item.maintenanceInformation }} </p>
-    <button class="dashboard-item-moreDetails" *ngIf="!item.isUnavailable" (click)="navigateToMap(item.id)"> {{ 'dashboardPage.moreDetails' | translate }} > </button>
-    <p class="dashboard-item-maintenanceInfo" *ngIf="item.isUnavailable"> {{ 'dashboardPage.maintenance' | translate }} </p>
+    <ng-container *ngTemplateOutlet="panelHeader"></ng-container>
+    <ng-container *ngTemplateOutlet="cardContent"></ng-container>
   </div>
 </div>
+
+<!-- HEADER -->
+<ng-template #panelHeader>
+  <div class="dashboard-item-content-header">
+    <button (click)="navigateToMap(item.id)">
+      <h3 class="dashboard-item-title"> {{item.title}} {{item.name}} </h3>
+    </button>
+    <div class="dashboard-item-dot">
+      <button class="dot" (click)="navigateToApplicationDetails(item.id)">
+        <img src="assets/img/dot.svg"/>
+      </button>
+    </div>
+  </div>
+</ng-template>
+
+<!-- CONTENT -->
+<ng-template #cardContent>
+  <!-- Territoires -->
+  <button class="dashboard-item-nbTerritories"
+    [ngClass]="{ 'dashboard-item-maintenance': item.isUnavailable }"
+    (click)="navigateToMap(applicationId, listOfTerritories[0].id)"
+    *ngIf="nbTerritory === 1">
+    {{ listOfTerritories[0].name }}
+  </button>
+
+  <button class="dashboard-item-nbTerritories"
+    [disabled]="item.isUnavailable"
+    *ngIf="nbTerritory > 1"
+    (click)="displayTerritoriesTag(item)">
+    {{ nbTerritory }} {{ 'dashboardPage.nbTerritoriesTitle' | translate }}
+  </button>
+
+  <!-- Description -->
+  <p class="dashboard-item-description" *ngIf="item.description">
+    {{ item.description && item.description.length > DESCRIPTION_MAX_CHARACTER
+        ? (item.description.slice(0, DESCRIPTION_MAX_CHARACTER) + '...')
+        : item.description }}
+  </p>
+
+  <!-- Warning -->
+  <p class="dashboard-item-warning" *ngIf="item.maintenanceInformation && item.maintenanceInformation.length > 0">
+    {{ item.maintenanceInformation }}
+  </p>
+
+  <!-- Maintenance / More details -->
+  <p class="dashboard-item-maintenanceInfo" *ngIf="item.isUnavailable">
+    {{ 'dashboardPage.maintenance' | translate }}
+  </p>
+
+  <button class="dashboard-item-moreDetails" *ngIf="!item.isUnavailable" (click)="navigateToApplicationDetails(item.id)">
+    {{ 'dashboardPage.moreDetails' | translate }} >
+  </button>
+</ng-template>

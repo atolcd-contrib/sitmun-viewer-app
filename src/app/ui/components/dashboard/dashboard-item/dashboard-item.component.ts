@@ -13,16 +13,13 @@ export class DashboardItemComponent {
   @Input() item!: DashboardItem;
   @Input() itemWidth!: string;
   @Output() tag = new EventEmitter<any>();
-  DESCRIPTION_MAX_CHARACTER : number = 100;
-  nbTerritory : number = 0;
-  applicationId : number = 0;
-  listOfTerritories : any;
+  DESCRIPTION_MAX_CHARACTER: number = 100;
+  nbTerritory: number = 0;
+  applicationId: number = 0;
+  listOfTerritories: any;
   mediaQueryListener: any;
 
-  constructor(
-    private commonService : CommonService,
-    private router : Router
-  ) {}
+  constructor(private commonService: CommonService, private router: Router) {}
 
   ngOnInit() {
     this.fillTerritory(this.item.id);
@@ -49,7 +46,7 @@ export class DashboardItemComponent {
     }
   }
 
-  fillTerritory(appId : number) {
+  fillTerritory(appId: number) {
     this.applicationId = appId;
     this.commonService.fetchTerritoriesByApplication(appId).subscribe({
       next: (res) => {
