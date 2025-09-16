@@ -209,6 +209,15 @@ export class NavigationBarComponent implements OnInit {
     return this.router.url.startsWith('/public');
   }
 
+  notInAuth() {
+    let notInAuth = true;
+    if (this.router.url.startsWith(NavigationPath.Auth.Base)) {
+      notInAuth = false;
+    }
+    return notInAuth;
+  }
+
+
   useLanguage(event: Event) {
     const target = event.target as HTMLSelectElement;
     this.translate.use(target.value);

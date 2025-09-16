@@ -12,6 +12,7 @@
   "loginPage.DNIE": "Accès avec certificat électronique ou carte d'identité électronique ",
   "loginPage.passwordForgotten" : "Mot de passe oublié ?",
   "loginPage.incorrectLogin": "Informations de connexion incorrectes",
+  "loginPage.profile": "profil",
   "profile.back": "Retour",
   "profile.myAccount": "Mon profil",
   "profile.profileInformation": "Mes informations",

@@ -12,6 +12,7 @@
   "loginPage.DNIE": "Access with electronic certificate or national identification system",
   "loginPage.passwordForgotten" : "Forgot password?",
   "loginPage.incorrectLogin": "Incorrect access data",
+  "loginPage.profile": "profile",
   "forgotPasswordPage.forgotPasswordForm.title": "Forgot your password ?",
   "forgotPasswordPage.forgotPasswordForm.description": "To reset your password, submit your username or your email adress below. An email will be sent to your email address, with instructions how to get access again.",
   "forgotPasswordPage.forgotPasswordForm.mailText": "Email address",

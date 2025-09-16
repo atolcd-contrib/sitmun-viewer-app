@@ -21,7 +21,7 @@
         class="home-menu button-menu"
         [class.active]="navigationClassActive === 'home'"
         (click)="homeRedirect()"
-        *ngIf="isConnected()">
+        *ngIf="notInAuth()">
       </button>
       <button
         class="authentication-menu"

@@ -171,27 +171,21 @@
   }
 }
 
-/* Maintenance items */
-.dashboard-item-maintenance {
-  img {
+  /* Maintenance items */
+  .dashboard-item-maintenance .dashboard-item-image button img,
+  .dashboard-item-maintenance .dashboard-item-title,
+  .dashboard-item-maintenance .dashboard-item-nbTerritories,
+  .dashboard-item-maintenance .dashboard-item-description,
+  .dashboard-item-maintenance .dashboard-item-warning,
+  .dashboard-item-maintenance .dashboard-item-moreDetails {
+    pointer-events: none;
     filter: grayscale(100%);
     opacity: 0.3;
   }
 
-  .dashboard-item-title,
-  .dashboard-item-nbTerritories,
-  .dashboard-item-description,
-  .dashboard-item-warning,
-  .dashboard-item-moreDetails {
-    filter: grayscale(100%);
-    opacity: 0.3;
+  .dashboard-item-maintenance * {
+    pointer-events: none;
   }
-}
-
-.dashboard-item-maintenance:hover {
-  pointer-events: none !important;
-  cursor: default !important;
-}
 
 mat-expansion-panel {
   width: 100%;
@@ -201,6 +195,11 @@ mat-expansion-panel {
 
 mat-expansion-panel-header {
   padding: 0 10px;
+}
+
+.dashboard-item-maintenance .mat-expansion-panel-header {
+  pointer-events: auto;
+  opacity: 1;
 }
 
 ::ng-deep .mat-expansion-panel .mat-expansion-panel-content .mat-expansion-panel-body {

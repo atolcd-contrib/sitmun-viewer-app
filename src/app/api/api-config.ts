@@ -3,7 +3,6 @@ export const BASE_URL = '/api';
 export const URL_RESET_PASSWORD_REQUEST = BASE_URL + '/password-reset/request';
 export const URL_RESET_PASSWORD_CONFIRM = BASE_URL + '/password-reset/confirm';
 export const URL_RESET_PASSWORD_RESEND = BASE_URL + '/password-reset/resend';
-export const URL_AUTH_VERIFY_EMAIL = '/api/user-verification/verify-email';
 
 export const URL_AUTH_VERIFY_PASSWORD = BASE_URL + '/user-verification/verify-password';
 

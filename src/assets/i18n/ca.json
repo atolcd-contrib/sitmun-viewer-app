@@ -13,6 +13,7 @@
   "loginPage.DNIE": "Accés amb certificat digital o DNIE",
   "loginPage.incorrectLogin": "Dades d'accés incorrectes",
   "loginPage.passwordForgotten" : "Has oblidat la teva contrasenya?",
+  "loginPage.profile": "perfil",
   "forgotPasswordPage.forgotPasswordForm.title": "Contrasenya oblidada ?",
   "forgotPasswordPage.forgotPasswordForm.description": "Si has oblidat la contrasenya, indica el teu nom d'usuari o la teva adreça de correu electrònic. T'enviarem un correu amb les instruccions i l'enllaç per generar una contrasenya nova.",
   "forgotPasswordPage.forgotPasswordForm.mailText": "Adreça de correu electrònic",

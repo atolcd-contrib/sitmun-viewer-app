@@ -44,6 +44,15 @@ export class DashboardItemComponent {
     }
   }
 
+  notInAuth() {
+    let notInAuth = true;
+    if (this.router.url.startsWith(NavigationPath.Auth.Base)) {
+      notInAuth = false;
+    }
+    return notInAuth;
+  }
+
+
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     this.checkWindowSize();
