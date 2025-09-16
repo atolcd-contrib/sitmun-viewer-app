@@ -1,5 +1,4 @@
 import { AuthenticationService } from './../../../auth/services/authentication.service';
-import { messages } from './../../../api/services/messages';
 import { Component } from '@angular/core';
 import { NotificationService } from 'src/app/notifications/services/NotificationService';
 import { TranslateService } from '@ngx-translate/core';
