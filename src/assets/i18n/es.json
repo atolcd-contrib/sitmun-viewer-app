@@ -1,6 +1,7 @@
 {
   "genericPrivateHeader.hi": "Hola",
   "loginPage.logoutText": "Desconexión",
+  "genericPrivateHeaders.changeAppOrTerritory": "Cambiar la aplicación o el territorio",
   "loginPage.title": "Iniciar sesión",
   "loginPage.publicDashboardButton": "Acceso público",
   "loginPage.usernameText": "Usuario",
