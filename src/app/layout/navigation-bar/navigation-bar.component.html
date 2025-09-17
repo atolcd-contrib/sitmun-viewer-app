@@ -1,7 +1,7 @@
 <div class='{{tamanyMenu()}}' *ngIf="!navigationBarIsHidden">
   <div class="dashboard-container">
     <div class="left">
-      <img id="sitmun-logo" class="nav-bar-img" (click)="homeRedirect()" alt="logo" src="assets/logos/logo_orange.png" *ngIf="isConnected() && (headerBase?.logoSitmun?.visible !== false)"/>
+      <img id="sitmun-logo" class="nav-bar-img" (click)="homeRedirect()" alt="logo" src="assets/logos/logo_orange.png" *ngIf="notInAuth() && (headerBase?.logoSitmun?.visible !== false)"/>
       <div *ngFor="let item of headerLeftSection">
         <img class="nav-bar-img" *ngIf="item?.visible && item?.url" [src]="item?.url" [alt]="item?.alt" />
       </div>
@@ -25,7 +25,7 @@
       </button>
       <button
         class="authentication-menu"
-        (click)="showAuthenticationPopup()">
+        (click)="showMenuPopup()">
       </button>
     </div>
   </div>
@@ -34,7 +34,7 @@
   </button>
 </div>
 
-<div class="navbar-responsive" *ngIf="isConnected()">
+<div class="navbar-responsive" *ngIf="notInAuth()">
   <div class="home-button" [class.active]="navigationClassActive === 'home'">
     <button (click)="homeRedirect()">
       <div class="icon"></div>
@@ -61,7 +61,7 @@
   [showLogoutButton]="headerBase?.logoutButton?.visible && isOnMap()"
   [showSwitchLanguageButton]="headerBase?.switchLanguageButton?.visible && isOnMap()"
   [showProfileButton]="headerBase?.profileButton?.visible && isOnMap()"
-  (hideEvent)="showAuthenticationPopup()"
+  (hideEvent)="showMenuPopup()"
   (loginEvent)="loginRedirect()"
   (logoutEvent)="logoutRedirect()"
   (profileEvent)="profileRedirect()"

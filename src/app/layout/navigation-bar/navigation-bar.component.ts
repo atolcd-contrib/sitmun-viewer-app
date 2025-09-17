@@ -261,7 +261,7 @@ export class NavigationBarComponent implements OnInit {
     });
   }
 
-  showAuthenticationPopup(): void {
+  showMenuPopup(): void {
     this.showPopup = !this.showPopup;
   }
 }

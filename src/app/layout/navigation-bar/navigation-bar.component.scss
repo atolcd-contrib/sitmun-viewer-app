@@ -200,8 +200,7 @@ $path_base: "./../../../assets/img/";
 
 
 @media (max-width: dimensions.$base-layout-breakpoint-small) {
-  .nav-bar .right .home-menu,
-  .nav-bar .right .authentication-menu {
+  .nav-bar .right .home-menu {
     display: none;
   }
 

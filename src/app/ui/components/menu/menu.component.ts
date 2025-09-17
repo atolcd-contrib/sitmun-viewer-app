@@ -38,7 +38,6 @@ export class MenuComponent implements OnInit {
     this.languageHelper.getLanguages().subscribe((langs) => {
       this.languages = langs;
     });
-    console.log(this.showProfileButton)
     if (this.showLogoutButton == null) {
       this.showLogoutButton = true;
     }
